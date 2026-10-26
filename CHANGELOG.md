@@ -6,6 +6,8 @@ All notable changes to this integration are documented here. The format follows
 
 ## [Unreleased]
 
+## [1.0.0] - 2026-10-26
+
 ### Added
 
 - First version of the iNoé Espace Famille calendar integration (AIGA family portal), read-only
@@ -17,4 +19,5 @@ All notable changes to this integration are documented here. The format follows
 - Settings: sync interval, days published ahead (7 to 92), time zone; "Sync now" button.
 - English, French, German and Spanish texts and documentation.
 
-[Unreleased]: https://github.com/prohand/gladys-calendar-inoeespacefamille/commits/main
+[Unreleased]: https://github.com/prohand/gladys-calendar-inoeespacefamille/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/prohand/gladys-calendar-inoeespacefamille/releases/tag/v1.0.0
