@@ -1,0 +1,232 @@
+{
+  "manifest_version": 1,
+  "type": "calendar",
+  "name": "iNoé Espace Famille – Agenda",
+  "description": {
+    "en": "Your children's bookings on iNoé Espace Famille (AIGA), in the Gladys calendar.",
+    "fr": "Les réservations de vos enfants sur l'Espace Famille iNoé (AIGA), dans l'agenda de Gladys.",
+    "de": "Die Buchungen Ihrer Kinder im iNoé-Familienportal (AIGA), im Kalender von Gladys.",
+    "es": "Las reservas de sus hijos en iNoé Espace Famille (AIGA), en el calendario de Gladys."
+  },
+  "version": "0.0.0",
+  "docker_image": "ghcr.io/prohand/gladys-calendar-inoeespacefamille:0.0.0",
+  "gladys_version": ">=5.3.0",
+  "cover_image": "https://raw.githubusercontent.com/prohand/gladys-calendar-inoeespacefamille/main/cover.png",
+  "categories": ["services"],
+  "keywords": [
+    "aiga",
+    "inoe",
+    "espace famille",
+    "agenda",
+    "calendrier",
+    "cantine",
+    "périscolaire",
+    "centre de loisirs",
+    "crèche",
+    "réservation"
+  ],
+  "countries": ["FR"],
+  "config_schema": [
+    {
+      "key": "intro",
+      "type": "section",
+      "label": {
+        "en": "How it works",
+        "fr": "Comment ça marche",
+        "de": "So funktioniert es",
+        "es": "Cómo funciona"
+      },
+      "description": {
+        "en": "Each Gladys user enables the integration for themselves under \"My calendars\", with their own iNoé Espace Famille address, email and password. Every child of the family gets a calendar, with one event per booked day. The integration only reads: it never books, cancels or pays anything. The settings below apply to every user.",
+        "fr": "Chaque utilisateur de Gladys active l'intégration pour lui-même dans « Mes agendas », avec sa propre adresse, son e-mail et son mot de passe de l'Espace Famille iNoé. Chaque enfant de la famille a un agenda, avec un événement par jour réservé. L'intégration ne fait que lire : elle ne réserve, n'annule et ne paie jamais rien. Les réglages ci-dessous valent pour tous les utilisateurs.",
+        "de": "Jeder Gladys-Benutzer aktiviert die Integration für sich selbst unter „Meine Kalender“, mit seiner eigenen Adresse, E-Mail und seinem Passwort des iNoé-Familienportals. Jedes Kind der Familie erhält einen Kalender mit einem Termin pro gebuchtem Tag. Die Integration liest nur: Sie bucht, storniert oder bezahlt nie etwas. Die folgenden Einstellungen gelten für alle Benutzer.",
+        "es": "Cada usuario de Gladys activa la integración para sí mismo en «Mis calendarios», con su propia dirección, correo y contraseña de iNoé Espace Famille. Cada niño de la familia tiene un calendario, con un evento por día reservado. La integración solo lee: nunca reserva, cancela ni paga nada. Los ajustes siguientes se aplican a todos los usuarios."
+      },
+      "links": [
+        {
+          "url": "https://github.com/prohand/gladys-calendar-inoeespacefamille/blob/main/docs/en.md",
+          "label": {
+            "en": "Integration documentation",
+            "fr": "Documentation de l'intégration",
+            "de": "Dokumentation der Integration",
+            "es": "Documentación de la integración"
+          }
+        }
+      ]
+    },
+    {
+      "key": "refresh_minutes",
+      "type": "number",
+      "label": {
+        "en": "Sync interval (min)",
+        "fr": "Intervalle de synchronisation (min)",
+        "de": "Synchronisierungsintervall (min)",
+        "es": "Intervalo de sincronización (min)"
+      },
+      "description": {
+        "en": "How often the portal is read, in minutes (15 to 1440).",
+        "fr": "Fréquence de lecture du portail, en minutes (15 à 1440).",
+        "de": "Wie oft das Portal gelesen wird, in Minuten (15 bis 1440).",
+        "es": "Frecuencia de lectura del portal, en minutos (15 a 1440)."
+      },
+      "required": false,
+      "default": 60,
+      "min": 15,
+      "max": 1440
+    },
+    {
+      "key": "days_ahead",
+      "type": "number",
+      "label": {
+        "en": "Days published ahead",
+        "fr": "Jours publiés à l'avance",
+        "de": "Im Voraus veröffentlichte Tage",
+        "es": "Días publicados por adelantado"
+      },
+      "description": {
+        "en": "How many days of each child's planning are put in the calendar, today included (7 to 92). Past days stay in the calendar.",
+        "fr": "Nombre de jours du planning de chaque enfant mis dans l'agenda, aujourd'hui compris (7 à 92). Les jours passés restent dans l'agenda.",
+        "de": "Wie viele Tage der Planung jedes Kindes in den Kalender kommen, heute eingeschlossen (7 bis 92). Vergangene Tage bleiben im Kalender.",
+        "es": "Cuántos días de la planificación de cada niño se ponen en el calendario, hoy incluido (7 a 92). Los días pasados se quedan en el calendario."
+      },
+      "required": false,
+      "default": 31,
+      "min": 7,
+      "max": 92
+    },
+    {
+      "key": "timezone",
+      "type": "string",
+      "label": {
+        "en": "Time zone",
+        "fr": "Fuseau horaire",
+        "de": "Zeitzone",
+        "es": "Zona horaria"
+      },
+      "description": {
+        "en": "The time zone of the families, which decides what \"today\" is. An IANA name such as Europe/Paris or Indian/Reunion.",
+        "fr": "Le fuseau horaire des familles, qui décide de ce qu'est « aujourd'hui ». Un nom IANA comme Europe/Paris ou Indian/Reunion.",
+        "de": "Die Zeitzone der Familien, die bestimmt, was „heute“ ist. Ein IANA-Name wie Europe/Paris oder Indian/Reunion.",
+        "es": "La zona horaria de las familias, que decide qué es «hoy». Un nombre IANA como Europe/Paris o Indian/Reunion."
+      },
+      "placeholder": {
+        "en": "Europe/Paris",
+        "fr": "Europe/Paris",
+        "de": "Europe/Paris",
+        "es": "Europe/Paris"
+      },
+      "required": false,
+      "default": "Europe/Paris"
+    }
+  ],
+  "account_schema": [
+    {
+      "key": "intro",
+      "type": "section",
+      "label": {
+        "en": "Your iNoé Espace Famille account",
+        "fr": "Votre compte Espace Famille iNoé",
+        "de": "Ihr iNoé-Familienportal-Konto",
+        "es": "Su cuenta de iNoé Espace Famille"
+      },
+      "description": {
+        "en": "Use the same address, email and password as on the iNoé Espace Famille portal of your town or structure, then enable the integration. Your calendars stay private until you share them with the household; only shared calendars reach the scenes.",
+        "fr": "Utilisez la même adresse, le même e-mail et le même mot de passe que sur le portail Espace Famille iNoé de votre commune ou structure, puis activez l'intégration. Vos agendas restent privés tant que vous ne les partagez pas avec le foyer ; seuls les agendas partagés servent aux scènes.",
+        "de": "Verwenden Sie dieselbe Adresse, E-Mail und dasselbe Passwort wie im iNoé-Familienportal Ihrer Gemeinde oder Einrichtung und aktivieren Sie dann die Integration. Ihre Kalender bleiben privat, bis Sie sie mit dem Haushalt teilen; nur geteilte Kalender erreichen die Szenen.",
+        "es": "Use la misma dirección, correo y contraseña que en el portal iNoé Espace Famille de su municipio o centro y luego active la integración. Sus calendarios son privados hasta que los comparta con el hogar; solo los calendarios compartidos llegan a las escenas."
+      },
+      "links": [
+        {
+          "url": "https://espacefamille.aiga.fr",
+          "label": {
+            "en": "iNoé Espace Famille",
+            "fr": "Espace Famille iNoé",
+            "de": "iNoé Espace Famille",
+            "es": "iNoé Espace Famille"
+          }
+        }
+      ]
+    },
+    {
+      "key": "portal_url",
+      "type": "string",
+      "label": {
+        "en": "Portal address",
+        "fr": "Adresse du portail",
+        "de": "Portaladresse",
+        "es": "Dirección del portal"
+      },
+      "description": {
+        "en": "Paste the address of the portal's sign-in page, e.g. https://espacefamille.aiga.fr/index.html?dossier=1626256 or https://espacefamille.aiga.fr/11578177 — or just that number.",
+        "fr": "Collez l'adresse de la page de connexion du portail, par exemple https://espacefamille.aiga.fr/index.html?dossier=1626256 ou https://espacefamille.aiga.fr/11578177 — ou seulement ce numéro.",
+        "de": "Fügen Sie die Adresse der Anmeldeseite des Portals ein, z. B. https://espacefamille.aiga.fr/index.html?dossier=1626256 oder https://espacefamille.aiga.fr/11578177 — oder nur diese Nummer.",
+        "es": "Pegue la dirección de la página de inicio de sesión del portal, p. ej. https://espacefamille.aiga.fr/index.html?dossier=1626256 o https://espacefamille.aiga.fr/11578177 — o solo ese número."
+      },
+      "placeholder": {
+        "en": "https://espacefamille.aiga.fr/index.html?dossier=1626256",
+        "fr": "https://espacefamille.aiga.fr/index.html?dossier=1626256",
+        "de": "https://espacefamille.aiga.fr/index.html?dossier=1626256",
+        "es": "https://espacefamille.aiga.fr/index.html?dossier=1626256"
+      },
+      "required": true
+    },
+    {
+      "key": "username",
+      "type": "string",
+      "label": {
+        "en": "Email",
+        "fr": "E-mail",
+        "de": "E-Mail",
+        "es": "Correo electrónico"
+      },
+      "description": {
+        "en": "The email you sign in to the portal with.",
+        "fr": "L'e-mail avec lequel vous vous connectez au portail.",
+        "de": "Die E-Mail, mit der Sie sich im Portal anmelden.",
+        "es": "El correo con el que inicia sesión en el portal."
+      },
+      "placeholder": {
+        "en": "name@example.com",
+        "fr": "nom@exemple.fr",
+        "de": "name@beispiel.de",
+        "es": "nombre@ejemplo.es"
+      },
+      "required": true
+    },
+    {
+      "key": "password",
+      "type": "secret",
+      "label": {
+        "en": "Password",
+        "fr": "Mot de passe",
+        "de": "Passwort",
+        "es": "Contraseña"
+      },
+      "description": {
+        "en": "The password of the portal. It is only sent to the AIGA sign-in server, and never written to the logs.",
+        "fr": "Le mot de passe du portail. Il n'est envoyé qu'au serveur de connexion d'AIGA, et jamais écrit dans les journaux.",
+        "de": "Das Passwort des Portals. Es wird nur an den Anmeldeserver von AIGA gesendet und nie in die Protokolle geschrieben.",
+        "es": "La contraseña del portal. Solo se envía al servidor de inicio de sesión de AIGA y nunca se escribe en los registros."
+      },
+      "required": true
+    }
+  ],
+  "actions": [
+    {
+      "key": "sync_now",
+      "label": {
+        "en": "Sync now",
+        "fr": "Synchroniser maintenant",
+        "de": "Jetzt synchronisieren",
+        "es": "Sincronizar ahora"
+      },
+      "description": {
+        "en": "Reads the portal of every user who enabled the integration and updates their calendars.",
+        "fr": "Lit le portail de chaque utilisateur qui a activé l'intégration et met à jour ses agendas.",
+        "de": "Liest das Portal jedes Benutzers, der die Integration aktiviert hat, und aktualisiert seine Kalender.",
+        "es": "Lee el portal de cada usuario que activó la integración y actualiza sus calendarios."
+      },
+      "timeout_seconds": 120
+    }
+  ]
+}
