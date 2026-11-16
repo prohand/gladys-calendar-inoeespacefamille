@@ -1,6 +1,6 @@
 {
   "name": "gladys-calendar-inoeespacefamille",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "private": true,
   "description": "Gladys Assistant calendar integration for the iNoé Espace Famille family portal (AIGA): each child's bookings in the Gladys calendar.",
   "type": "module",
