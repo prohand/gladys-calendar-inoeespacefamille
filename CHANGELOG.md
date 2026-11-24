@@ -6,6 +6,11 @@ All notable changes to this integration are documented here. The format follows
 
 ## [Unreleased]
 
+### Changed
+
+- Declared `transports: ["cloud"]` (the iNoé portal of AIGA): the Cloud filter of
+  the Gladys catalog now finds the integration.
+
 ## [1.0.3] - 2026-11-16
 
 - Maintenance release, no functional change.

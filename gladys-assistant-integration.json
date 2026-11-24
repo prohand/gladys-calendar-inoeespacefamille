@@ -26,6 +26,7 @@
     "réservation"
   ],
   "countries": ["FR"],
+  "transports": ["cloud"],
   "config_schema": [
     {
       "key": "intro",

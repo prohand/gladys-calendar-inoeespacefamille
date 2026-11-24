@@ -31,8 +31,9 @@ test('the version, the image tag and package.json agree', () => {
 test('a calendar integration, listening to the "My calendars" changes', () => {
   assert.equal(manifest.type, 'calendar');
   assert.match(indexSource, /onCalendarAccountUpdated\(/);
-  // No device: no transport to declare, no device surface.
-  assert.equal(manifest.transports, undefined);
+  // No device, but `transports` is also the catalog tag the Local / Cloud
+  // filters of Gladys read: the bookings come from the iNoé portal (AIGA).
+  assert.deepEqual(manifest.transports, ['cloud']);
 });
 
 test('every manifest action is registered in index.js', () => {
